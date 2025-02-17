@@ -1,0 +1,28 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+        Usuario:
+        <input  type="text"  id="usuario" class="form-control" formControlName="usuario" placeholder="Ingrese Usuario" >
+        @if (form.get("usuario")?.invalid && form.get("usuario")?.touched){
+            @if(form.get("usuario")?.hasError("required")){
+                <span class="error">El usuario es obligatorio</span>
+            }
+        }
+    </label>
+    <br>
+    <label>
+        Contraseña:
+        <input  type="text" id="password" class="form-control" formControlName="password" placeholder="Ingrese Contraseña" >
+        @if (form.get("password")?.invalid && form.get("password")?.touched){
+            @if(form.get("password")?.hasError("required")){
+                <span class="error">La contraseña es obligatoria</span>
+            }
+            @if(form.controls['password'].hasError("minLength")){
+                <span class="error">La contraseña requiere minimo 5 caracteres</span>
+            }
+        }
+    </label>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+    <br>
+    <button (click)="goToListProduct()">Volver</button>
+</form>

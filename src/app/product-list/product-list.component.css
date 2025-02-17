@@ -1,0 +1,20 @@
+.product-list
+{
+    background-color: aquamarine;
+ display:flex;
+ gap:10;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+}
+#imagenCarrito{
+    width:  3rem;
+}
+#imagenQCarrito{
+    width:  3rem;
+}
+#imagenUsuario{
+    width:  3rem;
+}

@@ -1,0 +1,19 @@
+<div >
+        <div *ngIf="product" class="product-detail">
+        <h1>
+            Detalles de producto:
+        </h1>
+        <img [src]="product.image" alt ="imagen" id="imagenP"/>
+        <h2>{{product.title}}
+            <br>
+            Precio:&nbsp;{{product.price}}
+            <br>
+            Descripción:&nbsp;{{product.description}}
+            <br>
+            Categoria:&nbsp;{{product.category}}
+        </h2>
+            <div>
+                <button (click)="goToListProduct()">Volver</button>
+            </div>
+        </div>
+</div>

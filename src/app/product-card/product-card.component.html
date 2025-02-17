@@ -1,0 +1,12 @@
+<body >
+    <div class="product-card">
+        <img [src]="product.image" alt ="imagen" id="imagenP"/>
+        <h1>{{product.title}}</h1>
+        <h2>Precio:&nbsp;{{product.price}}&nbsp;Bs.</h2>
+        <div class="botones">
+        <button (click)="ProductoSeleccinado()">Ver Detalles </button>
+        <button id="Agregar" [disabled]="btnAgregar" (click)="AgregarAlCarritoSeleccinado()">Agregar Al Carrito </button>
+        <button id="Quitar" [disabled]="btnQuitar" (click)="QuitarDelCarritoSeleccionado()"> Quitar del Carrito </button>
+        </div>   
+    </div>
+</body>

@@ -1,0 +1,21 @@
+<h2>Lista de Productos
+    <img  src="carrito.png" alt ="imagen" (click)="MostrarCarrito()" (dblclick)="VaciarCarrito()" id="imagenCarrito"/> 
+    <img  src="quitar-del-carrito.png" alt ="imagen" (click)="VaciarCarrito()" id="imagenQCarrito"/>  
+    <img  src="User.png" alt ="imagen" (click)="MostrarUsuario()" id="imagenUsuario"/>  
+</h2>
+<label>
+    Buscar Producto por Categoria:
+   <input  type="text" [formControl]="bcategoria" placeholder="Ingrese men's or women's clothing" >
+</label>
+<button (click)="buscarXcategoria()">Buscar</button>       
+<div class="product-list"> 
+    <app-product-card *ngFor="let item of this.listProducts| paginate:{itemsPerPage:8, currentPage: page}"
+        [product]="item"
+        (productoSeleccionado)="IrDetalles($event)"
+        (agregarProductoSeleccionado)="AgregarAlCarrito($event)"   
+        (quitarProductoSeleccionado)="QuitarDelCarrito($event)"
+        >
+    </app-product-card>
+</div>
+<pagination-controls (pageChange)="page=($event)" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+                    
