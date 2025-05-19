@@ -27,8 +27,8 @@ h3{
     border: 0px;
 }
 #imagenP{
-    height:  150px;
-    width: 150px;
+    height:  100%;
+    width: auto;
     display: block;
     margin: auto;
 }
